@@ -1,0 +1,202 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="images/depositphotos_417787354-stock-illustration-yummy-smile-vector-cartoon-line.jpg" type="image/x-icon">
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Yummy</title>
+    </head>
+    <body>
+
+        <!--  side bar -->
+
+<div class="sideBar position-fixed d-flex">
+
+<div class="openBar d-flex">
+
+    <div class="leftSide  d-flex flex-column justify-content-between">
+       
+        <div class="part1 d-flex flex-column">
+        <a href="#" id="search" >Search</a>
+        <a href="#" class="py-4" id="Categrioes">Categrioes</a>
+        <a href="#" id="areaa">Area</a>
+        <a href="#" class="py-4" id="Ingredients">Ingredients</a>
+        <a href="#" id="ContacUs">Contact Us</a>
+    </div>
+
+    <div class="part2 py-4">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-solid fa-globe"></i>
+<p class="text-white  ">Copyright Â© 2019 All Rights Reserved.</p>
+    </div>
+
+    </div>
+    <div class="middleSide bg-white d-flex flex-column justify-content-between">
+
+<div class="logo ps-1 pt-4"> 
+    <img src="images/depositphotos_417787354-stock-illustration-yummy-smile-vector-cartoon-line.jpg" class="w-100 " alt="">
+</div>
+<div class="close">
+    <i class="fa-solid fa-x text-black ps-3 fs-3" id="closeSide"></i>
+</div>
+<div class="icons d-flex flex-column ps-3 pb-5">
+    <i class="fa-solid fa-globe text-black mb-2"></i>
+    <i class="fa-solid fa-share-nodes text-black"></i>
+</div>
+
+    </div>
+</div>
+
+<!-- open side bar -->
+
+<div class="rightSide bg-white d-flex flex-column justify-content-between">
+
+<div class="logo ps-1 pt-4"> 
+    <img src="images/depositphotos_417787354-stock-illustration-yummy-smile-vector-cartoon-line.jpg" class="w-100" alt="">
+</div>
+<div class="open">
+    <i class="fa-solid open-close-icon fa-2x fa-align-justify text-black ps-3" id="openSide"></i>
+</div>
+<div class="icons d-flex flex-column ps-3 pb-5">
+    <i class="fa-solid fa-globe text-black mb-2"></i>
+    <i class="fa-solid fa-share-nodes text-black"></i>
+</div>
+
+    </div>
+
+ 
+
+</div>
+
+<div class="lds-default loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+
+<!-- search -->
+<div class="container d-none searchInput" >
+
+<div class="search d-flex gap-5 ">
+<input type="text" class="form-control mt-4 bg-transparent text-white  p-2  namesearch " placeholder="Search By Name">
+<input type="text" class="form-control mt-4 bg-transparent text-white p-2  letterSearch" placeholder="Search By First Letter">
+</div>
+</div>
+
+
+<!-- Contact Us -->
+
+<div class="container m-auto  d-none" id="cont">
+<div class="row g-4 w-75 m-auto">
+    
+<div class="col-md-6 ">  
+<input type="text" class="form-control p-2  " placeholder="Enter Your Name" id="nameInput"onkeyup="inputsValidation()">
+<div class="alert alert-danger w-100 mt-2 d-none" id="invalidName">Special characters and numbers not allowed
+</div>
+</div>
+
+
+<div class="col-md-6">           
+     <input type="email" class="form-control  p-2" placeholder="Enter Your Email" id="mail" onkeyup="inputsValidation()">
+     <div class="alert alert-danger w-100 mt-2 d-none" id="invalidEmail"> Email not valid *exemple amira@gmail.com</div>
+</div>
+
+
+    
+<div class="col-md-6">  
+  <input type="number" class="form-control p-2 " placeholder="Enter Your Phone" id="phonee" onkeyup="inputsValidation()">
+  <div class="alert  alert-danger w-100 mt-2 d-none" id="invalidphone">Enter valid Phone Number</div>
+</div>
+
+
+
+<div class="col-md-6">  
+  <input type="number" class="form-control p-2 " placeholder="Enter Your Age" id="AGE"onkeyup="inputsValidation()" >
+  <div class="alert  alert-danger w-100 mt-2 d-none" id="invalidAge">Enter valid Age</div>
+
+</div>
+
+
+
+  <div class="col-md-6">  
+    <input type="password" class="form-control p-2 " placeholder="Enter  Your Password " id="pass" onkeyup="inputsValidation()">
+    <div class="alert  alert-danger w-100 mt-2 d-none" id="invalidpass">Enter valid password *Minimum eight characters, at least one letter and one number:*
+    </div>
+
+ </div>
+
+
+
+ <div class="col-md-6">  
+<input type="password" class="form-control p-2 " placeholder="Repassword" id="Repass" onkeyup="inputsValidation()">
+<div class="alert  alert-danger w-100 mt-2 d-none" id="invalidrepass">Enter valid password 
+</div>
+</div>
+
+
+
+<div class="button  m-auto text-center">
+<button class="btn btn-outline-danger  text-danger px-2 mt-3" disabled id="submitBtn">submit</button>
+</div>
+
+
+</div>
+</div>
+
+
+
+<!-- Api data -->
+<div class="container pt-5 " id="allMeals">
+    <div class="row g-5 " id="meals">
+    </div>
+</div>
+
+<!-- Api categerioes -->
+
+
+
+<div class="container pt-5 " id="categerioesMeals">
+    <div class="row g-3 " id="categerioes">
+
+      
+    </div>
+</div>
+
+<!-- API AREA -->
+
+<div class="container" id="allofArea">
+    <div class="row g-3" id="Area">
+       
+    </div>
+</div>
+
+<!-- ingredients -->
+<div class="container" id="allingredients">
+    <div class="row g-3" id="ingreds">
+    
+    </div>
+</div>
+
+
+<!--Meal Details  -->
+<div class="container" id="AllDescription">
+    <div class="row" id="AllDetails">
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery-3.7.1.min.js"></script>
+         <script src="js/main.js"></script>   
+ </body>
+</html>
