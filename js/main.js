@@ -221,7 +221,7 @@ letterSearch.addEventListener("keyup",function(e){
         <div class="col-md-3 ">
         <div class="img position-relative"  onclick="FilterCategorie('${data[i].strCategory}')">
             <img src="${data[i].strCategoryThumb}" class="w-100" alt="">
-        <div class="imgLayer d-flex flex-column   align-items-center position-absolute  opacity-0">
+        <div class="imgLayer d-flex flex-column   align-items-center position-absolute   opacity-0">
             <h1 class="text-black ps-2">${data[i].strCategory}</h1>
             <p class="ps-2">${data[i].strCategoryDescription.split(" ").slice(0,20).join(" ")}</p>
         </div>   
@@ -302,7 +302,7 @@ async function allAreas(){
     let data=await fetch(`https://www.themealdb.com/api/json/v1/1/list.php?a=list`)
     let finalData= await data.json()
     let result=finalData.meals;
-    displayAreas(result)
+    displayAreas(result.slice(0,20))
     $(".loading").fadeOut(500)
 
     console.log(result)
@@ -345,7 +345,7 @@ document.querySelector("#areaa").addEventListener("click",function(){
     let data=await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${AreaName}`)
     let finalData= await data.json()
     let result=finalData.meals;
-    AreaDisplay(result)
+    AreaDisplay(result.slice(0,20))
     $(".loading").fadeOut(500)
 
     console.log(result)
@@ -422,7 +422,7 @@ async function ingredientsFilter(ingreName){
     let data=await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingreName}`)
     let finalData= await data.json()
     let result=finalData.meals;
-    ingFilter(result)
+    ingFilter(result.slice(0,20))
     $(".loading").fadeOut(500)
 
     console.log(result)
